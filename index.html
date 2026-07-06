@@ -1,21 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
 
-    </style>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icone CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
-<body>
-    <main>
-        <h1>Hello DOM</h1>
-    </main>
 
-    <script>
-        let h1 = document.querySelector("h1")
-        h1.innerText = "Working on the features"
-    </script>
+<body>
+    <div>
+        <div id="dashboard">
+            <header id="dash-header">
+                <div class="dash-logo">
+                    <h1>ProductiveHub</h1>
+                </div>
+                <div class="dash-btn">
+                    <button id="theme-toggle-btn">
+                        <i class="fa-solid fa-sun" id="theme-icon"></i>
+                    </button>
+                    <button id="git-btn">
+                        <i class="fa-brands fa-github"></i>
+                    </button>
+                </div>
+            </header>
+            <main id="dash-main">
+                <div id="weather">
+                    <div id="weather-card">
+                        <h1>Weather Details...</h1>
+                    </div>
+                    <nav id="nav-section">
+                        <div class="nav-elem">
+                            <img src="https://shivam-web-oss.github.io/proditivity-dashboard/images/todo-light.avif"
+                                alt="">
+                            <video class="nav-video"
+                                src="https://shivam-web-oss.github.io/proditivity-dashboard/Videos/todo-video.mp4" muted
+                                loop autoplay></video>
+                            <!-- <h2>Todo</h2> -->
+                        </div>
+                        <div class="nav-elem">
+                            <img src="https://shivam-web-oss.github.io/proditivity-dashboard/images/daily-planLight.jpg"
+                                alt="">
+                            <video class="nav-video"
+                                src="https://shivam-web-oss.github.io/proditivity-dashboard/Videos/daily-plan.mp4" muted
+                                loop autoplay></video>
+                            <!-- <h2>Planner</h2> -->
+                        </div>
+                        <div class="nav-elem">
+                            <img src="https://shivam-web-oss.github.io/proditivity-dashboard/images/moti-light.jpg"
+                                alt="">
+                            <video class="nav-video"
+                                src="https://shivam-web-oss.github.io/proditivity-dashboard/Videos/motivate.mp4" muted
+                                loop autoplay></video>
+                            <!-- <h2>Quotes</h2> -->
+                        </div>
+                        <div class="nav-elem">
+                            <img src="https://shivam-web-oss.github.io/proditivity-dashboard/images/pomolight.jpeg"
+                                alt="">
+                            <video class="nav-video"
+                                src="https://shivam-web-oss.github.io/proditivity-dashboard/Videos/pomo.mp4" muted
+                                loop autoplay></video>
+                            <!-- <h2>Timer</h2> -->
+                        </div>
+                        <div class="nav-elem">
+                            <img src="https://shivam-web-oss.github.io/proditivity-dashboard/images/goalsLight.avif"
+                                alt="">
+                            <video class="nav-video"
+                                src="https://shivam-web-oss.github.io/proditivity-dashboard/Videos/goals.mp4" muted
+                                loop autoplay></video>
+                            <!-- <h2>Goal</h2> -->
+                        </div>
+                    </nav>
+                </div>
+                <div id="todo-list"></div>
+                <div id="daily-planner"></div>
+                <div id="motivation-quotes"></div>
+                <div id="pomodoro-timer"></div>
+                <div id="daily-goal"></div>
+            </main>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="script.js"></script>
 </body>
+
 </html>
