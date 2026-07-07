@@ -76,3 +76,20 @@ goalBackBtn.addEventListener("click", () => {
     dailyGoal.style.display = "none"
     dashboard.style.display = "block"
 })
+
+let plannerCard = document.querySelector(".planner-card")
+let timeStart = 6
+let timeEnd = 7
+
+while(timeEnd <= 24) {
+    plannerCard.innerHTML += `
+        <div class="planner-detail">
+            <h3>${timeStart}:00 - ${timeEnd}:00</h3>
+            <input type="text" placeholder="...">
+        </div>
+    `
+    timeStart++;
+    timeEnd++
+}
+
+console.log("hello")
