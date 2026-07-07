@@ -1,3 +1,4 @@
+// ------------------PAGE SWITCHER
 let dashboard = document.querySelector("#dashboard")
 
 let todoList = document.querySelector("#todo-list")
@@ -77,6 +78,8 @@ goalBackBtn.addEventListener("click", () => {
     dashboard.style.display = "block"
 })
 
+
+// ---------- DAILY PLANNER CARD's
 let plannerCard = document.querySelector(".planner-card")
 let timeStart = 6
 let timeEnd = 7
@@ -92,4 +95,31 @@ while(timeEnd <= 24) {
     timeEnd++
 }
 
-console.log("hello")
+// ----------------THEME TOGGLE
+let themeToggleBtn = document.querySelector("#theme-toggle-btn")
+let themeIcon = document.querySelector("#theme-icon")
+let htmlTag = document.documentElement
+
+let savedTheme = localStorage.getItem("theme")
+
+if (savedTheme === "dark") {
+    htmlTag.setAttribute("data-theme", "dark")
+    themeIcon.classList.remove("fa-sun")
+    themeIcon.classList.add("fa-moon")
+}
+
+themeToggleBtn.addEventListener("click", () => {
+    let isDark = htmlTag.getAttribute("data-theme") === "dark"
+
+    if(isDark) {
+        htmlTag.removeAttribute("data-theme")
+        themeIcon.classList.remove("fa-moon")
+        themeIcon.classList.add("fa-sun")
+        localStorage.setItem("theme", "light")
+    } else {
+        htmlTag.setAttribute("data-theme", "dark")
+        themeIcon.classList.remove("fa-sun")
+        themeIcon.classList.add("fa-moon")
+        localStorage.setItem("theme", "dark")
+    }
+})
