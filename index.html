@@ -97,16 +97,12 @@
             </div>
             <div class="elem-body">
                 <div class="todo-add-page">
-                    <input 
-                        type="text" 
-                        placeholder="Enter Task"
-                    >
-                    <textarea 
-                        name="" 
-                        id=""
-                        placeholder="Enter Details"
-                    ></textarea>
-                    <p>Mark as Important!</p>
+                    <input type="text" placeholder="Enter Task">
+                    <textarea name="" id="" placeholder="Enter Details"></textarea>
+                    <label class="important-check">
+                        <input type="checkbox">
+                        Mark as Important!
+                    </label>
                     <button>Add Task</button>
                 </div>
                 <div class="todo-task-page">
@@ -122,7 +118,7 @@
                 </div>
             </div>
         </div>
-        <div id="daily-planner" style="display: block;">
+        <div id="daily-planner">
             <div class="elem-header">
                 <h1>Daily Planner</h1>
                 <button id="planner-back-btn">
@@ -147,7 +143,17 @@
                     Back
                 </button>
             </div>
-            <div></div>
+            <div class="elem-body">
+                <div class="quotes-card">
+                    <div class="quotes">
+                        <div>
+                            <h1>Quote of the Day</h1>
+                            <h1>;;</h1>
+                        </div>
+                        <h1>Today is your day</h1>
+                    </div>
+                </div>
+            </div>
         </div>
         <div id="pomodoro-timer">
             <div class="elem-header">
@@ -157,7 +163,19 @@
                     Back
                 </button>
             </div>
-            <div></div>
+            <div class="elem-body">
+                <div class="timer-card">
+                    <h1>Work Session</h1>
+                    <div class="timer">
+                        <h2>00:00</h2>
+                    </div>
+                    <div class="timer-btn">
+                        <button>Start</button>
+                        <button>Pause</button>
+                        <button>Reset</button>
+                    </div>
+                </div>
+            </div>
         </div>
         <div id="daily-goal">
             <div class="elem-header">
@@ -167,7 +185,23 @@
                     Back
                 </button>
             </div>
-            <div></div>
+            <div class="elem-body">
+                <div class="goal-add-page">
+                    <input type="text" placeholder="Enter Goal">
+                    <textarea name="" id="" placeholder="Enter Details"></textarea>
+                    <button>Add Goal</button>
+                </div>
+                <div class="goal-task-page">
+                    <div class="goal-card">
+                        <div class="goal-title">
+                            <h1>Goal 1</h1>
+                        </div>
+                        <button>
+                            Mark as Done
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
