@@ -1,3 +1,25 @@
+//---------------VIODE VOICE MUTE _ UNMUTE
+let muteBtn = document.querySelector("#mute-btn")
+let muteIcon = document.querySelector("#mute-icon")
+let videos = document.querySelector(".nav-video")
+let isMuted = true
+
+muteBtn.addEventListener("click", () => {
+
+    isMuted = !isMuted
+    videos.muted = isMuted
+
+    if(isMuted) {
+        muteIcon.classList.remove("fa-volume-up")
+        muteIcon.classList.add("fa-volume-mute")
+    } else {
+        muteIcon.classList.remove("fa-volume-mute")
+        muteIcon.classList.add("fa-volume-up")
+    }
+
+    console.log("mute")
+})
+
 // ------------------PAGE SWITCHER
 let dashboard = document.querySelector("#dashboard")
 
@@ -123,3 +145,31 @@ themeToggleBtn.addEventListener("click", () => {
         localStorage.setItem("theme", "dark")
     }
 })
+
+// ------------------THEME CHANGER ACCORDIN TO TIME
+const video = document.getElementById("bg-video");
+const source = document.getElementById("video-source");
+const overlay = document.getElementById("overlay");
+
+const hour = new Date().getHours();
+
+if (hour >= 5 && hour < 12) {
+    // Morning
+    source.src = "assets/anime.mp4";
+    overlay.style.background = "rgba(255, 223, 150, 0.18)";
+} else if (hour >= 12 && hour < 17) {
+    // Afternoon
+    source.src = "assets/anime.mp4";
+    overlay.style.background = "rgba(255, 245, 180, 0.12)";
+} else if (hour >= 17 && hour < 20) {
+    // Evening
+    source.src = "assets/anime2.mp4";
+    overlay.style.background = "rgba(255, 140, 70, 0.25)";
+} else {
+    // Night
+    source.src = "assets/anime2.mp4";
+    overlay.style.background = "rgba(8, 15, 40, 0.45)";
+}
+
+video.load();
+video.play();

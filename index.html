@@ -41,13 +41,24 @@
                 </div>
             </header>
             <main id="dash-main">
+                <video autoplay muted loop playsinline class="bg-video" id="bg-video">
+                    <source id="video-source" src="assets/anime.mp4" type="video/mp4">
+                </video>
+
+                <div id="overlay"></div>
+
                 <div id="weather">
+                    <button id="mute-btn">
+                        <i class="fa-solid fa-volume-mute" id="mute-icon"></i>
+                    </button>
                     <div id="weather-card">
+                        <div id="date-time">
+                            <h2 id="live-date">Tuesday, 07 July 2026</h2>
+                            <h1 id="live-time">02:35:09 PM</h1>
+                        </div>
                         <h1>Still Working on Project...</h1>
-                        <h4>Tab switch funcnalities done</h4>
-                        <h4>Todo UI done</h4>
-                        <h4>Daliy task UI done</h4>
-                        <h2>Working on Motivational Quote UI...</h2>
+                        <h4>Done with UI part</h4>
+                        <h2>Working on Funcnalities...</h2>
                     </div>
                     <nav id="nav-section">
                         <div class="nav-elem" id="todo">
@@ -56,7 +67,6 @@
                             <video class="nav-video"
                                 src="https://shivam-web-oss.github.io/proditivity-dashboard/Videos/todo-video.mp4" muted
                                 loop autoplay></video>
-                            <!-- <h2>Todo</h2> -->
                         </div>
                         <div class="nav-elem" id="planner">
                             <img src="https://shivam-web-oss.github.io/proditivity-dashboard/images/daily-planLight.jpg"
@@ -64,7 +74,6 @@
                             <video class="nav-video"
                                 src="https://shivam-web-oss.github.io/proditivity-dashboard/Videos/daily-plan.mp4" muted
                                 loop autoplay></video>
-                            <!-- <h2>Planner</h2> -->
                         </div>
                         <div class="nav-elem" id="quotes">
                             <img src="https://shivam-web-oss.github.io/proditivity-dashboard/images/moti-light.jpg"
@@ -72,7 +81,6 @@
                             <video class="nav-video"
                                 src="https://shivam-web-oss.github.io/proditivity-dashboard/Videos/motivate.mp4" muted
                                 loop autoplay></video>
-                            <!-- <h2>Quotes</h2> -->
                         </div>
                         <div class="nav-elem" id="timer">
                             <img src="https://shivam-web-oss.github.io/proditivity-dashboard/images/pomolight.jpeg"
@@ -80,7 +88,6 @@
                             <video class="nav-video"
                                 src="https://shivam-web-oss.github.io/proditivity-dashboard/Videos/pomo.mp4" muted loop
                                 autoplay></video>
-                            <!-- <h2>Timer</h2> -->
                         </div>
                         <div class="nav-elem" id="goal">
                             <img src="https://shivam-web-oss.github.io/proditivity-dashboard/images/goalsLight.avif"
@@ -88,7 +95,6 @@
                             <video class="nav-video"
                                 src="https://shivam-web-oss.github.io/proditivity-dashboard/Videos/goals.mp4" muted loop
                                 autoplay></video>
-                            <!-- <h2>Goal</h2> -->
                         </div>
                     </nav>
                 </div>
