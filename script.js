@@ -9,7 +9,7 @@ muteBtn.addEventListener("click", () => {
     isMuted = !isMuted
     videos.muted = isMuted
 
-    if(isMuted) {
+    if (isMuted) {
         muteIcon.classList.remove("fa-volume-up")
         muteIcon.classList.add("fa-volume-mute")
     } else {
@@ -106,7 +106,7 @@ let plannerCard = document.querySelector(".planner-card")
 let timeStart = 6
 let timeEnd = 7
 
-while(timeEnd <= 24) {
+while (timeEnd <= 24) {
     plannerCard.innerHTML += `
         <div class="planner-detail">
             <h3>${timeStart}:00 - ${timeEnd}:00</h3>
@@ -133,7 +133,7 @@ if (savedTheme === "dark") {
 themeToggleBtn.addEventListener("click", () => {
     let isDark = htmlTag.getAttribute("data-theme") === "dark"
 
-    if(isDark) {
+    if (isDark) {
         htmlTag.removeAttribute("data-theme")
         themeIcon.classList.remove("fa-moon")
         themeIcon.classList.add("fa-sun")
@@ -159,7 +159,7 @@ if (hour >= 5 && hour < 12) {
     overlay.style.background = "rgba(255, 223, 150, 0.18)";
 } else if (hour >= 12 && hour < 17) {
     // Afternoon
-    source.src = "assets/anime.mp4";
+    source.src = "assets/anime3.mp4";
     overlay.style.background = "rgba(255, 245, 180, 0.12)";
 } else if (hour >= 17 && hour < 20) {
     // Evening
@@ -167,9 +167,51 @@ if (hour >= 5 && hour < 12) {
     overlay.style.background = "rgba(255, 140, 70, 0.25)";
 } else {
     // Night
-    source.src = "assets/anime2.mp4";
+    source.src = "assets/anime4.mp4";
     overlay.style.background = "rgba(8, 15, 40, 0.45)";
 }
 
 video.load();
 video.play();
+
+//----------------DASHBOARD TIMER
+let liveTime = document.querySelector("#live-time")
+let liveDate = document.querySelector("#live-date")
+
+const updateDateTime = () => {
+    let now = new Date()
+    liveTime.textContent = now.toLocaleTimeString()
+    liveDate.textContent = now.toLocaleDateString("en-GB", {
+        weekday: "long",
+        day: "2-digit",
+        month: "long",
+        year: "numeric"
+    })
+}
+
+updateDateTime()
+
+setInterval(updateDateTime, 1000)
+
+//------------------DASHBOARD WEATHER
+navigator.geolocation.getCurrentPosition(
+    (position) => {
+        // console.log(position.coords.latitude)
+        // console.log(position.coords.longitude)
+        let LATITUDE = position.coords.latitude
+        let LONGITUDE = position.coords.longitude
+        let API_KEY = "fbe8226654b37662db331caad38f0810"
+
+        fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${LATITUDE}&lon=${LONGITUDE}&appid=${API_KEY}&units=metric`)
+            .then((response) => response.json())
+            .then((data) => {
+                console.log(data)
+            })
+            .catch((error) => {
+                console.log(error)
+            })
+    },
+    (error) => {
+        console.log(error)
+    }
+)
